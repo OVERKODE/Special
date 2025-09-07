@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh23832slnujl"]
+
+[ext_resource type="FontFile" uid="uid://dmhu2djbupuos" path="res://Material/Fonts/prologue.ttf" id="1_ctcux"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ckav"]
+font = ExtResource("1_ctcux")
+font_size = 26
+outline_size = 1
+
+[node name="Prologue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -75.0
+offset_right = 450.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "I was a normal boy, just like others"
+label_settings = SubResource("LabelSettings_4ckav")
+horizontal_alignment = 1
+vertical_alignment = 1
