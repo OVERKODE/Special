@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdvj2vi7iilt8"]
+
+[ext_resource type="ArrayMesh" uid="uid://3vya8vhrn61g" path="res://Material/Models/school_hall.obj" id="1_et8dj"]
+[ext_resource type="ArrayMesh" uid="uid://k8urwc7gcdet" path="res://Material/Models/door.obj" id="2_rx3cr"]
+[ext_resource type="ArrayMesh" uid="uid://b4o74auyvyn0o" path="res://Material/Models/lamp.obj" id="3_142ji"]
+[ext_resource type="PackedScene" uid="uid://df44hihc8ljkm" path="res://Scenes/player.tscn" id="4_rx3cr"]
+
+[node name="school_hall" type="Node3D"]
+
+[node name="SchoolHall" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_et8dj")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.28949e-08, 0, 0.295, 0, 0.295, 0, -0.295, 0, -1.28949e-08, -15.6008, 0.0924271, -19.399)
+mesh = ExtResource("2_rx3cr")
+
+[node name="Door2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.28949e-08, 0, -0.295, 0, 0.295, 0, 0.295, 0, -1.28949e-08, -15.6008, 0.0924271, -15.2669)
+mesh = ExtResource("2_rx3cr")
+
+[node name="Lamp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28644, 5.77757, -17.3294)
+mesh = ExtResource("3_142ji")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544173, 5.75529, -17.2587)
+mesh = ExtResource("3_142ji")
+skeleton = NodePath("../Lamp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544173, 5.75529, -8.32576)
+mesh = ExtResource("3_142ji")
+skeleton = NodePath("../Lamp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544173, 5.75529, 1.16329)
+mesh = ExtResource("3_142ji")
+skeleton = NodePath("../Lamp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544173, 5.75529, 11.2706)
+mesh = ExtResource("3_142ji")
+skeleton = NodePath("../Lamp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25793, 5.75529, 11.2663)
+mesh = ExtResource("3_142ji")
+skeleton = NodePath("../Lamp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="player" parent="." instance=ExtResource("4_rx3cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74003, 1.22082, -17.2074)

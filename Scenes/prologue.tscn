@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh23832slnujl"]
+[gd_scene load_steps=4 format=3 uid="uid://dh23832slnujl"]
 
+[ext_resource type="Script" uid="uid://t4d5vrjopd42" path="res://Scripts/prologue.gd" id="1_4ckav"]
 [ext_resource type="FontFile" uid="uid://dmhu2djbupuos" path="res://Material/Fonts/prologue.ttf" id="1_ctcux"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ckav"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4ckav")
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 0
@@ -34,7 +36,12 @@ offset_right = 450.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "I was a normal boy, just like others"
 label_settings = SubResource("LabelSettings_4ckav")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.09
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
