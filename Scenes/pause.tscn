@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmaub770nqauj"]
+
+[ext_resource type="FontFile" uid="uid://cdp40f340hrdc" path="res://Material/Fonts/menu.ttf" id="2_5a6ek"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0jm0"]
+font = ExtResource("2_5a6ek")
+font_size = 60
+
+[node name="pause" type="Control"]
+process_mode = 1
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.281187, 0.281187, 0.281187, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -143.365
+offset_right = 71.0
+offset_bottom = -61.365
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_e0jm0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.5
+offset_top = -26.705
+offset_right = 129.5
+offset_bottom = 39.295
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return to main menu"

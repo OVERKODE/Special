@@ -3,11 +3,13 @@ extends Control
 @onready var text = $text
 var fullText = "I was an ordinary guy like everyone else."
 @onready var timer = $Timer
+@onready var kb = $keyboard_sound
 var i = 0
 var msg_num = 0
 
 func _ready() -> void:
 	timer.start()
+	kb.play()
 
 func _on_timer_timeout() -> void:
 	if msg_num == 0 and i <= 40:
@@ -24,19 +26,24 @@ func _on_timer_timeout() -> void:
 		i += 1 
 
 	if (i == 41 and msg_num == 0):
+		kb.stop()
 		if Input.is_action_pressed("continue"):
+			kb.play()
 			msg_num += 1
 			fullText = "But people were hating me because I used to be gay."
 			text.text = ""
 			i = 0
 			timer.start()
 	if (i == 51 and msg_num == 1):
+		kb.stop()
 		if Input.is_action_pressed("continue"):
+			kb.play()
 			msg_num += 1
 			fullText = "But now I don't care about it."
 			text.text = ""
 			i = 0
 			timer.start()
 	if (i == 30 and msg_num == 2):
+		kb.stop()
 		if Input.is_action_pressed("continue"):
-			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/act_1_1.tscn")

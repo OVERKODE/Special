@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-var speed = 0.5
-var sprint_speed = 1.5
+var speed = 1.5
+var sprint_speed = 3
 var sensivity = 0.002
 var rotation_x = 0
 var rotation_y = 0

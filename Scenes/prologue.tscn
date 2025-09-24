@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh23832slnujl"]
+[gd_scene load_steps=5 format=3 uid="uid://dh23832slnujl"]
 
 [ext_resource type="Script" uid="uid://t4d5vrjopd42" path="res://Scripts/prologue.gd" id="1_4ckav"]
 [ext_resource type="FontFile" uid="uid://dmhu2djbupuos" path="res://Material/Fonts/prologue.ttf" id="1_ctcux"]
+[ext_resource type="AudioStream" uid="uid://qoo7w1p5uii1" path="res://Material/Sounds/keyboard.ogg" id="3_u0vu3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ckav"]
 font = ExtResource("1_ctcux")
@@ -43,5 +44,9 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.09
 autostart = true
+
+[node name="keyboard_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u0vu3")
+volume_db = 20.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

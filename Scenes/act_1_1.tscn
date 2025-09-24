@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://dleniodocs7t8"]
+
+[ext_resource type="Script" uid="uid://d2vabrdt31810" path="res://Scripts/manager_act1-1.gd" id="1_thklw"]
+[ext_resource type="PackedScene" uid="uid://cdvj2vi7iilt8" path="res://Scenes/school_hall.tscn" id="1_ynd0k"]
+[ext_resource type="PackedScene" uid="uid://df44hihc8ljkm" path="res://Scenes/player.tscn" id="2_uex77"]
+[ext_resource type="Script" uid="uid://dtq01mqbfeywm" path="res://Scripts/pause.gd" id="2_wn40a"]
+[ext_resource type="AudioStream" uid="uid://bvcqbgvpyignr" path="res://Material/Sounds/breakTime.ogg" id="3_uex77"]
+[ext_resource type="PackedScene" uid="uid://bmaub770nqauj" path="res://Scenes/pause.tscn" id="5_wyfpi"]
+
+[sub_resource type="Animation" id="Animation_uex77"]
+resource_name = "loop"
+length = 16.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_thklw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("break:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wyfpi"]
+_data = {
+&"RESET": SubResource("Animation_thklw"),
+&"loop": SubResource("Animation_uex77")
+}
+
+[node name="act1-1" type="Node3D"]
+script = ExtResource("1_thklw")
+
+[node name="manager" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("2_wn40a")
+
+[node name="school_hall" parent="." instance=ExtResource("1_ynd0k")]
+transform = Transform3D(0.855, 0, 0, 0, 0.855, 0, 0, 0, 0.855, 0, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("2_uex77")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.7107, 1.19759, -14.8255)
+
+[node name="break" type="AudioStreamPlayer3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716164, 0)
+stream = ExtResource("3_uex77")
+volume_db = -50.0
+autoplay = true
+
+[node name="break_sound_loop" type="AnimationPlayer" parent="player"]
+libraries = {
+&"": SubResource("AnimationLibrary_wyfpi")
+}
+
+[node name="pause" parent="." instance=ExtResource("5_wyfpi")]
+
+[connection signal="pressed" from="pause/exit" to="manager" method="_on_exit_pressed"]
+
+[editable path="player"]
+[editable path="pause"]
