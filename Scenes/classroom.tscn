@@ -1,0 +1,204 @@
+[gd_scene load_steps=10 format=3 uid="uid://cput6qkn4fo5a"]
+
+[ext_resource type="ArrayMesh" uid="uid://cixk4jlcqgbo" path="res://Material/Models/classroom.obj" id="1_3ppgh"]
+[ext_resource type="ArrayMesh" uid="uid://b4o74auyvyn0o" path="res://Material/Models/lamp.obj" id="2_fn828"]
+[ext_resource type="ArrayMesh" uid="uid://dqvs7t5fohel4" path="res://Material/Models/school_desk.obj" id="3_3vrak"]
+[ext_resource type="ArrayMesh" uid="uid://k8urwc7gcdet" path="res://Material/Models/door.obj" id="4_me841"]
+[ext_resource type="ArrayMesh" uid="uid://bbomdpuitgt0b" path="res://Material/Models/blackboard.obj" id="5_uvfad"]
+[ext_resource type="ArrayMesh" uid="uid://bposll43npbfa" path="res://Material/Models/teachers_desk.obj" id="6_0v4qc"]
+[ext_resource type="ArrayMesh" uid="uid://d2fi02y366vx" path="res://Material/Models/teachers_chair.obj" id="7_ly1mb"]
+[ext_resource type="ArrayMesh" uid="uid://bvcrybll2gtg2" path="res://Material/Models/window.obj" id="8_c0och"]
+[ext_resource type="ArrayMesh" uid="uid://urs8r5huw61k" path="res://Material/Models/book_shelf.obj" id="9_q2nhl"]
+
+[node name="classroom" type="Node3D"]
+
+[node name="Classroom" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3ppgh")
+
+[node name="Lamp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.03791, 5.61588, 4.81589)
+mesh = ExtResource("2_fn828")
+skeleton = NodePath("../Classroom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.03791, 5.61588, -3.81298)
+mesh = ExtResource("2_fn828")
+skeleton = NodePath("../Classroom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.88687, 5.61588, 4.81589)
+mesh = ExtResource("2_fn828")
+skeleton = NodePath("../Classroom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9259, 5.61588, -3.88052)
+mesh = ExtResource("2_fn828")
+skeleton = NodePath("../Classroom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362303, 5.61588, 4.81589)
+mesh = ExtResource("2_fn828")
+skeleton = NodePath("../Classroom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="Lamp6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325675, 5.61588, -3.79906)
+mesh = ExtResource("2_fn828")
+skeleton = NodePath("../Classroom")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.557895, 0)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 13.2762
+
+[node name="desks" type="Node" parent="."]
+
+[node name="SchoolDesk" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 2.30338, 0.133968, -4.28452)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk2" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 2.30338, 0.133968, -0.288866)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk3" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 2.30338, 0.133968, 3.61263)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk4" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -1.60941, 0.133968, -4.28452)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk5" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -5.55917, 0.133968, -4.28452)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk6" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -9.19988, 0.133968, -4.28452)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk7" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -1.61073, 0.133968, -0.288866)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk8" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -1.56882, 0.133968, 3.61421)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk9" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -5.61114, 0.133968, -0.288866)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk10" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -9.24479, 0.133968, -0.288866)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk11" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -5.65142, 0.133968, 3.61421)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="SchoolDesk12" type="MeshInstance3D" parent="desks"]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -9.20178, 0.133968, 3.61421)
+mesh = ExtResource("3_3vrak")
+skeleton = NodePath("../..")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.26763e-08, 0, -0.29, 0, 0.29, 0, 0.29, 0, -1.26763e-08, -14.2241, 0, 3.46066)
+mesh = ExtResource("4_me841")
+
+[node name="Blackboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.8057, 1.05406, -0.02158)
+mesh = ExtResource("5_uvfad")
+
+[node name="TeachersDesk" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.8631e-08, 0, -0.655, 0, 0.655, 0, 0.655, 0, -2.8631e-08, 8.66174, -0.0479815, -5.3943)
+mesh = ExtResource("6_0v4qc")
+
+[node name="TeachersChair" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.04008, 0, -0.588446, 0, 1.195, 0, 0.588446, 0, 1.04008, 10.7096, 0, -5.8228)
+mesh = ExtResource("7_ly1mb")
+
+[node name="windows" type="Node" parent="."]
+
+[node name="Window" type="MeshInstance3D" parent="windows"]
+transform = Transform3D(-0.715, 0, -6.25073e-08, 0, 0.715, 0, 6.25073e-08, 0, -0.715, -7.50853, 0.685665, -8.70549)
+mesh = ExtResource("8_c0och")
+skeleton = NodePath("../..")
+
+[node name="Window2" type="MeshInstance3D" parent="windows"]
+transform = Transform3D(-0.715, 0, -6.25073e-08, 0, 0.715, 0, 6.25073e-08, 0, -0.715, -1.57672, 0.685665, -8.70549)
+mesh = ExtResource("8_c0och")
+skeleton = NodePath("../..")
+
+[node name="Window3" type="MeshInstance3D" parent="windows"]
+transform = Transform3D(-0.715, 0, -6.25073e-08, 0, 0.715, 0, 6.25073e-08, 0, -0.715, 4.33365, 0.685665, -8.70549)
+mesh = ExtResource("8_c0och")
+skeleton = NodePath("../..")
+
+[node name="shelves" type="Node" parent="."]
+
+[node name="BookShelf" type="MeshInstance3D" parent="shelves"]
+transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, -9.11316, 0, 8.46295)
+mesh = ExtResource("9_q2nhl")
+skeleton = NodePath("../..")
+
+[node name="BookShelf2" type="MeshInstance3D" parent="shelves"]
+transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, -5.41389, 0, 8.46295)
+mesh = ExtResource("9_q2nhl")
+skeleton = NodePath("../../Classroom")
+
+[node name="BookShelf3" type="MeshInstance3D" parent="shelves"]
+transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, -1.69153, 0, 8.46295)
+mesh = ExtResource("9_q2nhl")
+skeleton = NodePath("../..")
+
+[node name="BookShelf4" type="MeshInstance3D" parent="shelves"]
+transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, 2.13625, 0, 8.46295)
+mesh = ExtResource("9_q2nhl")
+skeleton = NodePath("../..")
+
+[node name="BookShelf5" type="MeshInstance3D" parent="shelves"]
+transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, 5.87715, 0, 8.46295)
+mesh = ExtResource("9_q2nhl")
+skeleton = NodePath("../../Classroom")

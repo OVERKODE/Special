@@ -16,7 +16,7 @@ func _on_timer_timeout() -> void:
 		text.text += fullText[i]
 		timer.start()
 		i += 1
-	if msg_num == 1 and i <= 50:
+	if msg_num == 1 and i <= 43:
 		text.text += fullText[i]
 		timer.start()
 		i += 1
@@ -30,11 +30,11 @@ func _on_timer_timeout() -> void:
 		if Input.is_action_pressed("continue"):
 			kb.play()
 			msg_num += 1
-			fullText = "But people were hating me because I used to be gay."
+			fullText = "But people hate me because I used to be gay."
 			text.text = ""
 			i = 0
 			timer.start()
-	if (i == 51 and msg_num == 1):
+	if (i == 44 and msg_num == 1):
 		kb.stop()
 		if Input.is_action_pressed("continue"):
 			kb.play()
