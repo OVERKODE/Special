@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cput6qkn4fo5a"]
+[gd_scene load_steps=16 format=3 uid="uid://cput6qkn4fo5a"]
 
 [ext_resource type="ArrayMesh" uid="uid://cixk4jlcqgbo" path="res://Material/Models/classroom.obj" id="1_3ppgh"]
 [ext_resource type="ArrayMesh" uid="uid://b4o74auyvyn0o" path="res://Material/Models/lamp.obj" id="2_fn828"]
@@ -9,6 +9,24 @@
 [ext_resource type="ArrayMesh" uid="uid://d2fi02y366vx" path="res://Material/Models/teachers_chair.obj" id="7_ly1mb"]
 [ext_resource type="ArrayMesh" uid="uid://bvcrybll2gtg2" path="res://Material/Models/window.obj" id="8_c0och"]
 [ext_resource type="ArrayMesh" uid="uid://urs8r5huw61k" path="res://Material/Models/book_shelf.obj" id="9_q2nhl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ppgh"]
+size = Vector3(29.119, 6.06824, 0.664307)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fn828"]
+size = Vector3(0.398438, 5.99115, 17.5646)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vrak"]
+size = Vector3(3.44348, 2.27148, 3.32544)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me841"]
+size = Vector3(1.93951, 1.96667, 1.36688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvfad"]
+size = Vector3(18.5189, 4.67493, 1.4873)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0v4qc"]
+size = Vector3(2.00739, 2.21533, 1.22388)
 
 [node name="classroom" type="Node3D"]
 
@@ -81,67 +99,53 @@ light_energy = 5.0
 light_bake_mode = 1
 omni_range = 13.2762
 
-[node name="desks" type="Node" parent="."]
-
-[node name="SchoolDesk" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 2.30338, 0.133968, -4.28452)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk2" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 2.30338, 0.133968, -0.288866)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk3" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 2.30338, 0.133968, 3.61263)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk4" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -1.60941, 0.133968, -4.28452)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk5" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -5.55917, 0.133968, -4.28452)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk6" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -9.19988, 0.133968, -4.28452)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk7" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk7" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -1.61073, 0.133968, -0.288866)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk8" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk8" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -1.56882, 0.133968, 3.61421)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk9" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk9" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -5.61114, 0.133968, -0.288866)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk10" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk10" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -9.24479, 0.133968, -0.288866)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk11" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk11" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -5.65142, 0.133968, 3.61421)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
-[node name="SchoolDesk12" type="MeshInstance3D" parent="desks"]
+[node name="SchoolDesk12" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, -9.20178, 0.133968, 3.61421)
 mesh = ExtResource("3_3vrak")
-skeleton = NodePath("../..")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.26763e-08, 0, -0.29, 0, 0.29, 0, 0.29, 0, -1.26763e-08, -14.2241, 0, 3.46066)
@@ -159,46 +163,112 @@ mesh = ExtResource("6_0v4qc")
 transform = Transform3D(1.04008, 0, -0.588446, 0, 1.195, 0, 0.588446, 0, 1.04008, 10.7096, 0, -5.8228)
 mesh = ExtResource("7_ly1mb")
 
-[node name="windows" type="Node" parent="."]
-
-[node name="Window" type="MeshInstance3D" parent="windows"]
+[node name="Window" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.715, 0, -6.25073e-08, 0, 0.715, 0, 6.25073e-08, 0, -0.715, -7.50853, 0.685665, -8.70549)
 mesh = ExtResource("8_c0och")
-skeleton = NodePath("../..")
 
-[node name="Window2" type="MeshInstance3D" parent="windows"]
+[node name="Window2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.715, 0, -6.25073e-08, 0, 0.715, 0, 6.25073e-08, 0, -0.715, -1.57672, 0.685665, -8.70549)
 mesh = ExtResource("8_c0och")
-skeleton = NodePath("../..")
 
-[node name="Window3" type="MeshInstance3D" parent="windows"]
+[node name="Window3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.715, 0, -6.25073e-08, 0, 0.715, 0, 6.25073e-08, 0, -0.715, 4.33365, 0.685665, -8.70549)
 mesh = ExtResource("8_c0och")
-skeleton = NodePath("../..")
 
-[node name="shelves" type="Node" parent="."]
-
-[node name="BookShelf" type="MeshInstance3D" parent="shelves"]
+[node name="BookShelf" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, -9.11316, 0, 8.46295)
 mesh = ExtResource("9_q2nhl")
-skeleton = NodePath("../..")
 
-[node name="BookShelf2" type="MeshInstance3D" parent="shelves"]
+[node name="BookShelf2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, -5.41389, 0, 8.46295)
 mesh = ExtResource("9_q2nhl")
-skeleton = NodePath("../../Classroom")
+skeleton = NodePath("../Classroom")
 
-[node name="BookShelf3" type="MeshInstance3D" parent="shelves"]
+[node name="BookShelf3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, -1.69153, 0, 8.46295)
 mesh = ExtResource("9_q2nhl")
-skeleton = NodePath("../..")
 
-[node name="BookShelf4" type="MeshInstance3D" parent="shelves"]
+[node name="BookShelf4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, 2.13625, 0, 8.46295)
 mesh = ExtResource("9_q2nhl")
-skeleton = NodePath("../..")
 
-[node name="BookShelf5" type="MeshInstance3D" parent="shelves"]
+[node name="BookShelf5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.57, 0, -4.9831e-08, 0, 0.57, 0, 4.9831e-08, 0, -0.57, 5.87715, 0, 8.46295)
 mesh = ExtResource("9_q2nhl")
-skeleton = NodePath("../../Classroom")
+skeleton = NodePath("../Classroom")
+
+[node name="shapes" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0692444, 2.53412, 9.14839)
+shape = SubResource("BoxShape3D_3ppgh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0692444, 2.53412, -9.01171)
+shape = SubResource("BoxShape3D_3ppgh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1325, 2.49557, 0.246643)
+shape = SubResource("BoxShape3D_fn828")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3585, 2.49557, 0.246643)
+shape = SubResource("BoxShape3D_fn828")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61783, 0.635742, -5.50679)
+shape = SubResource("BoxShape3D_3vrak")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08616, 0.483337, -0.292067)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84698, 0.483337, -0.292067)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08616, 0.483337, -4.26781)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08616, 0.483337, 3.59353)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84692, 0.483337, 3.6099)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8492, 0.483337, -4.23032)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08414, 0.483337, -4.32577)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17916, 0.483337, 3.62892)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75601, 0.483337, -0.292067)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.80272, 0.483337, -4.28556)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78598, 0.483337, 3.61916)
+shape = SubResource("BoxShape3D_me841")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="shapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68341, 1.83746, 8.27926)
+shape = SubResource("BoxShape3D_uvfad")
+
+[node name="players_desk" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="players_desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09843, 0.607666, -0.284564)
+shape = SubResource("BoxShape3D_0v4qc")

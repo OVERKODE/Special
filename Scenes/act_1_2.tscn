@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://bd431jog0mrwd"]
+
+[ext_resource type="PackedScene" uid="uid://cput6qkn4fo5a" path="res://Scenes/classroom.tscn" id="1_0mbcx"]
+[ext_resource type="Script" uid="uid://1plydv5jh51m" path="res://Scripts/manager_act_1_2.gd" id="1_2lplj"]
+[ext_resource type="PackedScene" uid="uid://df44hihc8ljkm" path="res://Scenes/player.tscn" id="2_xoe7o"]
+[ext_resource type="AudioStream" uid="uid://bvcqbgvpyignr" path="res://Material/Sounds/breakTime.ogg" id="3_og0pl"]
+[ext_resource type="FontFile" uid="uid://dmhu2djbupuos" path="res://Material/Fonts/prologue.ttf" id="3_t7jby"]
+[ext_resource type="FontFile" uid="uid://cdp40f340hrdc" path="res://Material/Fonts/menu.ttf" id="4_1oey3"]
+[ext_resource type="Texture2D" uid="uid://d1uvykbyx63yq" path="res://Material/Sprites/down_arrow.png" id="5_qlh1g"]
+[ext_resource type="Texture2D" uid="uid://d0fevumgts4qo" path="res://Material/Sprites/shadow.png" id="6_qlh1g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmtav"]
+font = ExtResource("3_t7jby")
+font_size = 31
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_001hh"]
+font = ExtResource("4_1oey3")
+font_size = 51
+
+[node name="act1_2" type="Node3D"]
+script = ExtResource("1_2lplj")
+
+[node name="player" parent="." instance=ExtResource("2_xoe7o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.8996, 0.870842, 2.04707)
+
+[node name="Label" type="Label" parent="player/canvas" index="1"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -280.0
+offset_right = 57.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_vmtav")
+
+[node name="Label2" type="Label" parent="player/canvas" index="2"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -293.5
+offset_top = -180.0
+offset_right = 293.5
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press SPACE to stand up"
+label_settings = SubResource("LabelSettings_001hh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="break_sound" type="AudioStreamPlayer3D" parent="player"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.141195, 0.48811, 0.0240612)
+stream = ExtResource("3_og0pl")
+volume_db = -60.0
+autoplay = true
+
+[node name="classroom" parent="." instance=ExtResource("1_0mbcx")]
+transform = Transform3D(0.855, 0, 0, 0, 0.855, 0, 0, 0, 0.855, 0, 0, 0)
+
+[node name="arrow" type="Sprite3D" parent="."]
+transform = Transform3D(0.345, 0, 0, 0, 0.345, 0, 0, 0, 0.345, -4.19807, 3.11454, -0.168183)
+texture = ExtResource("5_qlh1g")
+
+[node name="cam_on_lesson" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.63377, 1.64373, -0.229497)
+
+[node name="s1" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, 1.92299, 1.54043, 2.99855)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, 1.92299, 1.54043, -0.281928)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s3" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, 1.92299, 1.54043, -3.72895)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s4" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -1.31756, 1.54043, 2.99855)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s5" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -1.45944, 1.54043, -0.334604)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s6" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -1.49126, 1.54043, -3.7065)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s7" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -4.83183, 1.54043, 2.99855)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s8" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -7.79683, 1.54043, 2.99855)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s9" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -7.82583, 1.54043, -0.375481)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s10" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -4.78696, 1.54043, -3.68501)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="s11" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50804e-08, 0, 0.345, 0, 0.345, 0, -0.345, 0, -1.50804e-08, -7.85181, 1.54043, -3.72684)
+visible = false
+texture = ExtResource("6_qlh1g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="player"]

@@ -1,11 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://dleniodocs7t8"]
+[gd_scene load_steps=14 format=3 uid="uid://dleniodocs7t8"]
 
 [ext_resource type="Script" uid="uid://d2vabrdt31810" path="res://Scripts/manager_act1-1.gd" id="1_thklw"]
 [ext_resource type="PackedScene" uid="uid://cdvj2vi7iilt8" path="res://Scenes/school_hall.tscn" id="1_ynd0k"]
 [ext_resource type="PackedScene" uid="uid://df44hihc8ljkm" path="res://Scenes/player.tscn" id="2_uex77"]
 [ext_resource type="Script" uid="uid://dtq01mqbfeywm" path="res://Scripts/pause.gd" id="2_wn40a"]
 [ext_resource type="AudioStream" uid="uid://bvcqbgvpyignr" path="res://Material/Sounds/breakTime.ogg" id="3_uex77"]
+[ext_resource type="FontFile" uid="uid://dmhu2djbupuos" path="res://Material/Fonts/prologue.ttf" id="5_fvypt"]
 [ext_resource type="PackedScene" uid="uid://bmaub770nqauj" path="res://Scenes/pause.tscn" id="5_wyfpi"]
+[ext_resource type="Texture2D" uid="uid://bhhb6ontyo8tt" path="res://Material/Sprites/toilet_sign.png" id="8_bh2mn"]
+[ext_resource type="AudioStream" uid="uid://bxasol3dgoxnk" path="res://Material/Sounds/door_opened.ogg" id="9_ggyy5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q76xf"]
+font = ExtResource("5_fvypt")
+font_size = 31
+outline_size = 3
 
 [sub_resource type="Animation" id="Animation_thklw"]
 length = 0.001
@@ -58,6 +66,25 @@ transform = Transform3D(0.855, 0, 0, 0, 0.855, 0, 0, 0, 0.855, 0, 0, 0)
 [node name="player" parent="." instance=ExtResource("2_uex77")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.7107, 1.19759, -14.8255)
 
+[node name="text" type="Label" parent="player/canvas" index="1"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.5
+offset_top = -280.0
+offset_right = 76.5
+offset_bottom = -228.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Not here"
+label_settings = SubResource("LabelSettings_q76xf")
+
+[node name="Timer" type="Timer" parent="player/canvas" index="2"]
+wait_time = 1.5
+
 [node name="break" type="AudioStreamPlayer3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716164, 0)
 stream = ExtResource("3_uex77")
@@ -71,7 +98,15 @@ libraries = {
 
 [node name="pause" parent="." instance=ExtResource("5_wyfpi")]
 
-[connection signal="pressed" from="pause/exit" to="manager" method="_on_exit_pressed"]
+[node name="sign" type="Sprite3D" parent="."]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -4.23711, 3.66076, -18.8636)
+texture = ExtResource("8_bh2mn")
+
+[node name="door" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11285, 1.43871, -4.84333)
+stream = ExtResource("9_ggyy5")
+
+[connection signal="timeout" from="player/canvas/Timer" to="." method="_on_timer_timeout"]
 
 [editable path="player"]
 [editable path="pause"]
